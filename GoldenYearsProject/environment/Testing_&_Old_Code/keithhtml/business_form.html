@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add new Transport Company</title>
+</head>
+<body>
+<form action="../php/keithphp/business_submit.php" method="post">
+    <p>
+        <label for="business_name">Business name*</label>
+        <input type="text" name="business_name" id="business_name" >
+    </p>
+        <p>
+        <label for="address_id">Address ID*</label>
+        <input type="number" name="address_id" id="address_id" >
+    </p>    <p>
+        <label for="rep_first_name">Repasentative's First Name*</label>
+        <input type="text" name="rep_first_name" id="rep_first_name" >
+    </p>
+        <p>
+        <label for="rep_last_name">Repasentative's Last Name</label>
+        <input type="text" name="rep_last_name" id="rep_last_name">
+    </p>
+        <p>
+        <label for="rep_email">Repasentative's Email</label>
+        <input type="email" name="rep_email" id="rep_email">
+    </p>
+        <p>
+        <label for="rep_phone">Repasentative's Phone*</label>
+        <input type="tel" name="rep_phone" id="rep_phone" >
+    </p>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

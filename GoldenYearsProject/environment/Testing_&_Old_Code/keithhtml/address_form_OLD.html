@@ -1,0 +1,141 @@
+<?php
+// Create connection
+$db = new mysqli($servername, $username, $password, $database, $dbport);
+// Check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
+
+if(count($_POST)>0){//Check if there are variables passed in $ _POST
+    $address_street  = !empty($_POST['address_street']) ? $_POST['address_street'] : ""; /* not null */
+    $address_street2 = !empty($_POST['address_street2']) ? $_POST['address_street2'] : "";
+    $address_city    = !empty($_POST['address_city']) ? $_POST['address_city'] : ""; /* not null */
+    $address_county  = !empty($_POST['address_county']) ? $_POST['address_county'] : ""; /* not null */
+    $address_eircode = !empty($_POST['address_eircode']) ? $_POST['address_eircode'] : "";
+    $address_country = !empty($_POST['address_country']) ? $_POST['address_country'] : "";
+    $address_geo_latitude = null;
+    $address_geo_longtitude = null;
+
+    /* Field Required */
+    $aFieldRequired = [
+        $address_street,
+        $address_city,
+        $address_county,
+    ];
+    /* End */
+
+    /* Check Filled Fields */
+    $bFieldRequired = false;
+    foreach($aFieldRequired as $aField){
+        if(trim($aField) == ""){
+            $bFieldRequired = true;
+            break;
+        }
+    }
+    /* END */
+
+    $successDB = false;
+    if(!$bFieldRequired){//Insert in db only if the mandatory fields are filled.
+        $sql = "INSERT INTO Address(address_id, address_street, address_street2, address_city, address_county, address_eircode, address_country, address_geo_latitude, address_geo_longtitude)
+VALUES ('', '$address_street', '$address_street2', '$address_city', '$address_county', '$address_eircode', '$address_country', '$address_geo_latitude', '$address_geo_longtitude')";
+
+        $successDB = $db->query($sql);
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Golden Years</title>
+
+</head>
+
+<body>
+
+<div class="container main-container" >
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <center>
+                    <h2>Register</h2>
+                    <p>
+                        If you would like to register to this website, please fill out the followinf forms.
+                    </p>
+                </center>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <br><br>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <center>
+                    <h2>Your address details</h2>
+                    <form action="" method="post">
+                        <p>
+                            <label for="address_street">Street*</label>
+                            <input type="text" name="address_street" id="address_street" required>
+                        </p>
+                        <p>
+                            <label for="address_street2">Street 2</label>
+                            <input type="text" name="address_street2" id="address_street2">
+                        </p>    <p>
+                            <label for="address_city">City*</label>
+                            <input type="text" name="address_city" id="address_city" required>
+                        </p>
+                        <p>
+                            <label for="address_county">County*</label>
+                            <select name="address_county">
+                                <option value="" selected>Please select</option>
+                                <option value="Antrim">Antrim</option>
+                                <option value="Armagh">Armagh</option>
+
+                                ... [more values]
+                            </select>
+                        </p>
+                        <p>
+                            <label for="address_eircode">Eircode</label>
+                            <input type="text" name="address_eircode" id="address_eircode">
+                        </p>
+                        <p>
+                            <label for="address_country">Country</label>
+                            <input type="text" name="address_country" id="address_country" value="Ireland">
+
+                            <!-- <p>
+                             <label for="address_geo_latitude">Latitude</label>
+                             <input type="float" name="address_geo_latitude" id="address_geo_latitude">
+                         </p>
+                             <p>
+                             <label for="address_geo_longtitude">Longitude</label>
+                             <input type="float" name="address_geo_longtitude" id="address_geo_longtitude">
+                         </p> -->
+                            <input type="submit" value="Submit">
+                    </form>
+                    <?php
+                    if(!isset($bFieldRequired)){
+                        echo ("Welcome, Fill Fields!");
+                    }
+                    else if(isset($bFieldRequired) && $bFieldRequired){
+                        echo ("Fill Fields required!");
+                    }
+                    else if (isset($successDB) && !$successDB){
+                        echo ("Could not enter data: ".$db->error);
+                    }
+                    else if (isset($successDB) && $successDB){
+                        echo ("Thank you. Address submitted!");
+                    }
+                    ?>
+
+                </center>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

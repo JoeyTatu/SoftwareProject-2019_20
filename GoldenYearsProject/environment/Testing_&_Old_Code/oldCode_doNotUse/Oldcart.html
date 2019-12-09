@@ -1,0 +1,66 @@
+<?php 
+  
+    if(isset($_POST['submit'])){ 
+          
+        foreach($_POST['quantity'] as $key => $val) { 
+            if($val==0) { 
+                unset($_SESSION['cart'][$key]); 
+            }else{ 
+                $_SESSION['cart'][$key]['quantity']=$val; 
+            } 
+        } 
+          
+    } 
+  
+?> 
+  
+<h1>View cart</h1> 
+<a href="index.php?page=products">Go back to the products page please.</a> 
+<form method="post" action="index.php?page=cart"> 
+      
+    <table> 
+          
+        <tr> 
+            <th>Name</th> 
+            <th>Quantity</th> 
+            <th>Price</th> 
+            <th>Items Price</th> 
+        </tr> 
+          
+
+                    <tr> 
+                        <td colspan="4">Total Price: <?php echo $totalprice ?></td> 
+                    </tr> 
+          
+    </table> 
+    <br /> 
+    <button type="submit" name="submit">Update Cart</button> 
+</form> 
+<br /> 
+<span>To remove an item set its quantity to 0 if you change your mind. </span>
+<span> Happy shopping </span>
+-->
+
+
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+  <!-- Identify your business so that you can collect the payments. -->
+  <input type="hidden" name="business" value="kin@kinskards.com">
+
+  <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+  <input type="hidden" name="cmd" value="_cart">
+  <input type="hidden" name="add" value="1">
+
+  <!-- Specify details about the item that buyers will purchase. -->
+  <!-- from form/php -->
+  <input type="hidden" name="item_name" value="NCI Open Day (Student fees">
+  <input type="hidden" name="amount" value="0.00">
+  <input type="hidden" name="currency_code" value="USD">
+
+  <!-- Display the payment button. -->
+  <input type="image" name="submit"
+    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+    alt="Add to Cart">
+  <img alt="" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+</form>
