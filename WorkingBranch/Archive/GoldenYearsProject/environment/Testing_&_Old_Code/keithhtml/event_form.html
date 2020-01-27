@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add new Event</title></title>
+</head>
+<body>
+<form action="../php/keithphp/event_submit.php" method="post">
+    <p>
+        <label for="event_type_id">Event Type ID*</label>
+        <input type="number" name="event_type_id" id="event_type_id" required>
+    </p>
+    <p>
+        <label for="venue_id">Venue ID*</label>
+        <input type="number" name="venue_id" id="venue_id" required>
+    </p>
+        <p>
+        <label for="event_time_hour">Event Time (hour, e.g. 17)*</label>
+        <input type="number" name="event_time_hour" id="event_time_hour" required>
+    </p>
+    <p>
+        <label for="event_time_min">Event Time (minute, e.g. 45)*</label>
+        <input type="number" name="event_time_min" id="event_time_min" required>
+    </p>  
+        <p>
+        <label for="event_date">Date*</label>
+        <input type="date" name="event_date" id="event_date" format="dd/MM/yyyy" required>
+    </p>
+        <p>
+        <label for="is_transport_provided">Transport proivded?</label>
+        <select name="is_transport_provided">
+            <option value="true">Yes</option>
+            <option value="false" selected>No</option>
+        </select>
+    </p>
+        <p>
+        <label for="transport_id">Transport ID*</label>
+        <input type="number" name="transport_id" id="transport_id">
+    </p>
+        <p>
+        <label for="can_pay_cash">Can pay cash at Event?</label>
+        <select name="can_pay_cash">
+            <option value="true">Yes</option>
+            <option value="false" selected>No</option>
+        </select>
+    </p>
+            <p>
+        <label for="business_id">Business ID*</label>
+        <input type="number" name="business_id" id="business_id">
+    </p>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

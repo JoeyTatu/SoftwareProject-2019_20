@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Golden Years</title>
+	
+	<link rel="stylesheet" href="golden.css" type="text/css" />
+	<meta name="viewport" content="width-decive-width, initial-scale=1.0">
+	<script>
+	 var angle = 0;
+	function galleryspin(sign) { 
+	spinner = document.querySelector("#spinner");
+	if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+	spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+	}
+	</script>
+	
+</head>
+
+<body class="body">
+
+	<header class="mainheader">
+		
+		<nav>
+		<class="active"><a href="index.html">HOME</a>  <!-- nav bar top page -->
+		<a href="medical.html">MEDICAL SUPPORT</a>
+		<a href="events.html">EVENTS</a>
+		<a href="education.html">EDUCATION</a>
+		</nav> </br>
+		</br>
+	</header>
+	
+	<button onclick="document.getElementById('id01').style.display='block'" class= "login-button"> Login</button>
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php"> /*sort with keith*/
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+	<!-- <div class="button">
+		Please Log In
+		<button type="button">Log In</button>
+		 or Sign Up 
+		<button type="button">Sign Up </button>
+	</div> -->
+	
+
+	<div class="maincontent"> <!-- this div contains main post -->
+		<div class="content">
+			<article class="leftcontent">
+				<header>
+					<h2><a href="medical.html" title="MEDICAL SUPPORT">MEDICAL SUPPORT</a></h2>
+				</header>
+				
+				</footer>
+					<p class="post info"> tregregsh</p>
+				</footer>
+					
+				<content>
+				<p>rfgregffribf</p>
+				</content>
+				
+			</article>
+			
+			<article class="midcontent">
+				<header>
+					<h2><a href="events.html" title="EVENTS">EVENTS</a></h2>
+				</header>
+				
+				</footer>
+					<p class="post info"> ergergsh</p>
+				</footer>
+					
+				<content>
+				<p>regerhbfribf</p>
+				</content>
+				
+			</article>
+			
+			<article class="rightcontent">
+				<header>
+					<h2><a href="education.html" title="EDUCATION">EDUCATION</a></h2>
+				</header>
+				
+				</footer>
+					<p class="post info"> whateve draft</p>
+				</footer>
+					
+				<content>
+				<p>cla cla lkjn</p>
+				</content>
+				
+			</article>
+		</div>
+	</div>
+
+	<aside class="top-sidebar"> <!-- search bar -->
+		<article>
+		<h2>SEARCH</h2>
+		<p>
+			<form>
+				<input type="text" name="search" placeholder="Search..">
+			</form>
+		</p>
+		</article>
+	</aside>
+	
+		<aside class="middle-sidebar">
+		<article>
+		<h2>BOOKING</h2>
+		<p>Events booking</p>
+		<p><iframe src="https://www.sagenda.net/Frontend/5a0ed4832799512e2c76d361?retrieveFromCookies=False" width="230" height="250" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation allow-scripts allow-forms"></iframe></p>
+		</article>
+	</aside>
+	
+	
+	<aside class="bottom-sidebar"> 
+		<article>
+		<h2>GALLERY</h2>
+		<p>
+		<base href="TeamProject3">
+			<div id="carousel">
+		<figure id="spinner">
+			<img src="1.jpg" alt>
+			<img src="2.jpg" alt>
+			<img src="3.jpg" alt>
+			<img src="4.jpg" alt>
+			<img src="5.jpg" alt>
+			<img src="6.jpg" alt>
+			<img src="7.jpg" alt>
+			<img src="8.jpg" alt>
+		</figure>
+</div>
+<span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+<span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+		</p>
+		</article>
+	</aside>
+	
+	<footer class="mainFooter">
+	 <p>Copyright &copy; 2017 <a href="#" title="Golden Years">Golden Years</a></p> <!-- adds link to go back up to the top -->
+	</footer>
+</body>
+	
+</html>

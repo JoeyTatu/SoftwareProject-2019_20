@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add New Vendor</title>
+</head>
+<body>
+<form action="../php/keithphp/vendor_submit.php" method="post">
+    <p>
+        <label for="vendor_name">Name of Vendor*</label>
+        <input type="text" name="vendor_name" id="vendor_name" required>
+    </p>
+        <p>
+        <label for="address_id">Address ID*</label>
+        <input type="number" name="address_id" id="address_id" required>
+    </p>
+        <p>
+        <label for="contact_first_name">Contact's First Name</label>
+        <input type="text" name="contact_first_name" id="contact_first_name" required>
+    </p>
+        <p>
+        <label for="contact_last_name">Contact's Last Name</label>
+        <input type="text" name="contact_last_name" id="contact_last_name">
+    </p>
+        <p>
+        <label for="contact_email">Contact's Email*</label>
+        <input type="email" name="contact_email" id="contact_email">
+    </p>
+        <p>
+        <label for="contact_phone">Contact's Phone*</label>
+        <input type="tel" name="contact_phone" id="contact_phone" required>
+    </p>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

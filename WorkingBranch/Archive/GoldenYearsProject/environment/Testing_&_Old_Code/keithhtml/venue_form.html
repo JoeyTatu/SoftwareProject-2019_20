@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add New Venue</title>
+</head>
+<body>
+<form action="../php/keithphp/venue_submit.php" method="post">
+    <p>
+        <label for="venue_name">Name of Venue*</label>
+        <input type="text" name="venue_name" id="venue_name" required>
+    </p>
+        <p>
+        <label for="address_id">Address ID*</label>
+        <input type="number" name="address_id" id="address_id" required>
+    </p>
+        <p>
+        <label for="venue_contact_first_name">Contact's First Name</label>
+        <input type="text" name="venue_contact_first_name" id="venue_contact_first_name">
+    </p>
+        <p>
+        <label for="venue_contact_last_name">Contact's Last Name</label>
+        <input type="text" name="venue_contact_last_name" id="venue_contact_last_name">
+    </p>
+        <p>
+        <label for="venue_phone">Contact's Phone*</label>
+        <input type="tel" name="venue_phone" id="venue_phone" required>
+    </p>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

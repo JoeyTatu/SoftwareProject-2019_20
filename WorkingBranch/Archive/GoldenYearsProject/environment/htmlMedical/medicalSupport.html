@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+    <!-- @reference: https://community.c9.io/t/customize-title-icon-favicon/10839 -->
+    <!--<link rel="stylesheet" href="css/golden.css" type="text/css" />-->
+    <!--<link rel="stylesheet" href="css/responsive.css" type="text/css" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/golden.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="../css/register.css" type="text/css" /> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.js"></script>
+
+
+    <title>Golden Years</title>
+
+
+    <script>
+        var angle = 0;
+
+        function galleryspin(sign) {
+            spinner = document.querySelector("#spinner");
+            if (!sign) { angle = angle + 45; }
+            else { angle = angle - 45; }
+            spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
+        }
+    </script>
+</head>
+
+<body>
+    <!--include jquery so that when screen shrinks there is a drop down menu on nav-->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#"></a>
+        <!--<img src"img/icon.gif" alt="Icon">-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <!--Give this a class or id to change the style-->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../htmlHome/index.php">Home <span class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="../htmlMedical/medical.html"> Medical Support</a>
+                    <!-- code for making the nav link text white when on page class="active"-->
+                </li>
+    </nav>
+
+
+
+    <div class="container main-container">
+
+        <!-- Where we have our header Golden Years and a brief description -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3"><img src="../img/Heading.gif" class="img-responsive" alt="Golden Years" height="200px" width="1000px"></h1>
+                <!--Don't know how to make this heading responsive-->
+                <p>Welcome to Golden Years. This website is designed for people who are in their golden years and provides event creation and booking, as well as useful information.</p>
+                <p><a class="btn btn-primary btn-lg" href="medical.html" role="button">Back to Medical Page</a></p>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <h2>What our Team can offer on Medical Support</h2>
+                <p>Thank You for visiting our Page "Golden Years". We here at Golden Years would like to offer our support and services to ensure that you enjoy life to its full. We are not Doctors or Professionals inmedicine. However we have provided pathways to the support you may need. We have guidlines provided for you on what activities we think are suitable for individuals. We advice for any serious illnesses or if any way uncertain to seek professional medical advice before participating in an activity. Thank You again for you custom. Please dont hesitate to contact us on our abouts page if you ahve any queries. Thank You. </p>
+                <p><a class="btn btn-secondary" href="../htmlEvents/events.html" role="button">Book an Event &raquo;</a></p>
+            </div>
+
+
+
+
+            <!--<footer class="footer"></footer>-->
+            <footer class="footerInBottomBar container">
+                <p>Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> Golden Years</p>
+            </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    function validateForm()
+    {
+        var cust  = document.forms["myForm"]["customer_id"].value;
+        var bus   = document.forms["myForm"]["business_id"].value;
+        var pass1 = document.forms["myForm"]["password1"].value;
+        var pass2 = document.forms["myForm"]["password2"].value;
+        
+        if ((cust == "") && (bus == ""))
+        {
+            alert("Error: Customer ID or Business ID is required.");
+            return false;
+        }
+        else if ((cust != "") && (bus != ""))
+        {
+            alert("Error: Please enter either Customer ID or Business ID");
+            return false;
+        }
+        else if (pass1 != pass2)
+        {
+            alert("Error: Passwords do not match");
+            return false;
+        }
+        else if ((cust != "") && (bus == "")) 
+        {
+            return true;
+        }
+        else if ((cust == "") && (bus != "")) 
+        {
+            return true;
+        }
+
+    }
+        
+        
+    </script>
+
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+
+<body>
+<form name="myForm" onsubmit="return validateForm()" action="../php/keithphp/login_submit.php" method="post">
+        <p>
+        <label for="customer_id">Customer ID*</label>
+        <input type="number" name="customer_id" id="customer_id">
+    </p>
+        <p>
+        <label for="business_id">Business ID</label>
+        <input type="number" name="business_id" id="business_id">
+    </p>
+        <p>
+        <label for="password1">Password*</label>
+        <input type="password" name="password1" id="password1">
+    </p>
+        <p>
+        <label for="password2">Password again*</label>
+        <input type="password" name="password2" id="password2">
+    </p>
+    
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+AWS Cloud9:
+
+MySQL:
+
+sudo service mysqld start
+
+sudo mysql_secure_installation
+	(leave password blank)
+	
+sudo chkconfig mysqld on
+
+mysql -u root -p
+
+
+~~~~~~~~~~~~~~~~
+	
+To start server:
+
+Click the + on the bottom window
+Click New Run Configuration
+Click Runner on the right and select PHP(built-in server)
+Preview the file, and open externally. 
+
