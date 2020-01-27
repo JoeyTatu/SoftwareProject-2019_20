@@ -1,1 +1,1 @@
-MidPointPrototype is in a branch
+The branch named "Proto" is the Mid Point Prototype.
