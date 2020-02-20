@@ -1,0 +1,50 @@
+<h2>Account for <%= @account.first_name %> <%= @account.last_name %> </h2>
+<table>
+  <tr>
+    <td colspan="2">
+      <% if @account.avatar.attached? %>
+        <center><img style="max-width:200px;width: expression(this.width > 200 ? 200: true);" src="<%=(url_for(@account.avatar)) %>"></center> <!-- Max height @ref: https://stackoverflow.com/questions/3678378/is-there-a-way-to-specify-a-max-height-or-width-for-an-image -->
+      <% else %>
+        <center>No profile image.</center>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>ID Number:</b></td>
+    <td><%= @account.id %></td>
+  </tr>
+  <tr>
+    <td><b>First Name:</b></td>
+    <td><%= @account.first_name %></td>
+  </tr>
+  <tr>
+    <td><b>Last Name:</b></td>
+    <td><%= @account.last_name %></td>
+  </tr>
+  <tr>
+    <td><b>Email:</b></td>
+    <td><%= @account.email %></td>
+  <!-- </tr>
+    <tr>
+    <td><b>Password Encrypted</b></td> 
+    <td><%#= @account.password %></td>
+  </tr> <!-- For testing only.-->
+  <tr>
+    <td><b>Password change:</b></td>
+    <td><%= link_to 'Change password', edit_account_path, :class => 'btn btn-default' %></td>
+  </tr>
+  <tr>
+    <td><b>Account type:</b></td>
+    <td><%= @account.account_type %></td>
+  </tr>
+  <tr>
+    <td><b>Date joined:</b></td>
+    <td><%= @account.created_at %></td>
+  </tr>
+</table>
+<hr>
+<%= link_to 'Edit', edit_account_path(@account), :class => 'btn btn-default' %>
+<%= link_to 'Delete', account_path(@account),
+                        method: :delete,
+                        data: {confirm: 'Are you sure?' },
+                        :class => 'btn btn-danger' %>

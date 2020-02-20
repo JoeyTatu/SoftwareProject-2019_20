@@ -1,6 +1,6 @@
 # Documents: https://github.com/JoeyTatu/SoftwareProject
 # Prototype: https://github.com/JoeyTatu/SoftwareProject/tree/Proto
-# Ruby On Rails code: https://github.com/JoeyTatu/SoftwareProject-RubyOnRails
+# Ruby On Rails code: https://github.com/JoeyTatu/SWProject-Rails
 
 # LinkedIn: https://linkedin.com/in/JoeyTatu
 # Email: joey.tatu@student.ncirl.ie
